@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nuts-mobile/static/css/main.15238b3a.css",
-    "main.js": "/nuts-mobile/static/js/main.06056d7b.js",
+    "main.css": "/nuts-mobile/static/css/main.f256fc89.css",
+    "main.js": "/nuts-mobile/static/js/main.f500bbca.js",
     "static/js/453.3904ba61.chunk.js": "/nuts-mobile/static/js/453.3904ba61.chunk.js",
     "index.html": "/nuts-mobile/index.html",
-    "main.15238b3a.css.map": "/nuts-mobile/static/css/main.15238b3a.css.map",
-    "main.06056d7b.js.map": "/nuts-mobile/static/js/main.06056d7b.js.map",
+    "main.f256fc89.css.map": "/nuts-mobile/static/css/main.f256fc89.css.map",
+    "main.f500bbca.js.map": "/nuts-mobile/static/js/main.f500bbca.js.map",
     "453.3904ba61.chunk.js.map": "/nuts-mobile/static/js/453.3904ba61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15238b3a.css",
-    "static/js/main.06056d7b.js"
+    "static/css/main.f256fc89.css",
+    "static/js/main.f500bbca.js"
   ]
 }
