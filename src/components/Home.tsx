@@ -1,10 +1,20 @@
 import type React from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Home.css";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { type } = useParams<{ type?: string }>();
+
+  useEffect(() => {
+    const resetZoom = () => {
+      document.body.style.transform = "scale(1)";
+      document.body.style.transformOrigin = "0 0";
+    };
+
+    resetZoom();
+  }, []);
 
   const handleRegisterClick = () => {
     navigate(`/register${type ? `?type=${type}` : ""}`);
