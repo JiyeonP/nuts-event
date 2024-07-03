@@ -21,23 +21,25 @@ const Register: React.FC = () => {
     }
   }, [location]);
 
-  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleContactChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
     if (value.length <= 20) {
       setContact(value);
       setContactError("");
     } else {
-      setContactError("글자수가 20자를 초과했습니다.");
+      setContactError("20자 이내로 작성해주세요");
     }
   };
 
-  const handleSuggestionsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSuggestionsChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const value = e.target.value;
     if (value.length <= 200) {
       setSuggestions(value);
       setSuggestionsError("");
     } else {
-      setSuggestionsError("글자수가 200자를 초과했습니다.");
+      setSuggestionsError("200자 이내로 작성해주세요");
     }
   };
 
@@ -71,23 +73,28 @@ const Register: React.FC = () => {
       <h1 className="text-center">등록 페이지</h1>
       <div>
         <div>Contact</div>
-        <input
-          type="text"
+        <textarea
           placeholder="이메일 혹은 전화번호"
           value={contact}
           onChange={handleContactChange}
+          style={{ height: "16px", resize: "none" }}
         />
-        {contactError && <div style={{ color: "red" }}>{contactError}</div>}
+        {contactError && (
+          <div style={{ color: "red", fontSize: "12px" }}>{contactError}</div>
+        )}
       </div>
       <div>
         <div>Suggestions</div>
-        <input
+        <textarea
           placeholder="당신이 원하는 디자이너 제품, 당신이 서비스에 등록하려는 이유, 당신의 오늘 저녁 메뉴, 당신의 하루 일과"
           value={suggestions}
           onChange={handleSuggestionsChange}
+          style={{ height: "100px", resize: "none" }}
         />
         {suggestionsError && (
-          <div style={{ color: "red" }}>{suggestionsError}</div>
+          <div style={{ color: "red", fontSize: "12px" }}>
+            {suggestionsError}
+          </div>
         )}
       </div>
       <button type="submit" onClick={handleSubmit}>

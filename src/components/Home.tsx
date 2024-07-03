@@ -19,6 +19,7 @@ const Home: React.FC = () => {
       />
       <div className="description">
         안녕하세요
+        <br />
         <br /> 당신을 위한 디자이너 제품 커머스 NUTS <br />
         궁금하다면
       </div>
