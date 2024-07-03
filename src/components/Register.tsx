@@ -43,6 +43,21 @@ const Register: React.FC = () => {
     }
   };
 
+  const chooseSuggestionPlaceholder = () => {
+    switch (type) {
+      case "1":
+        return "이런 방식의 디자이너 덕질이 하고싶어요!";
+      case "2":
+        return "내 취향 저격하는 디자이너 제품을 어떻게 찾고 계신가요? 불편함은 없으신가요?";
+      case "3":
+        return "선호하는 디자이너 펀딩 가격대가 있나요? 어떤 디자이너의 제품이 갖고 싶으신가요?";
+      case "4":
+        return "nuts팀은 숨겨진 예쁜 티셔츠를 모아 여러분의 취향 티셔츠를 찾기 쉽게 도와드리려고 해요. 좋아하는 티셔츠 종류나 나만 아는 티셔츠 브랜드가 있나요?";
+      default:
+        return "nuts팀은 디자인을 통한 취향 발견을 도우려고 하고 있어요. 저희 팀의 아이디어에 대한 의견이나 제안이 있다면 자유롭게 알려주세요!";
+    }
+  };
+
   const handleSubmit = async () => {
     try {
       const form_url = process.env.REACT_APP_GOOGLE_FORM_URL as string;
@@ -86,7 +101,7 @@ const Register: React.FC = () => {
       <div>
         <div>Suggestions</div>
         <textarea
-          placeholder="당신이 원하는 디자이너 제품, 당신이 서비스에 등록하려는 이유, 당신의 오늘 저녁 메뉴, 당신의 하루 일과"
+          placeholder={chooseSuggestionPlaceholder()}
           value={suggestions}
           onChange={handleSuggestionsChange}
           style={{ height: "100px", resize: "none" }}
