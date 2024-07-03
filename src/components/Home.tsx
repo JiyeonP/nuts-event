@@ -12,7 +12,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      <img src="/logo.svg" alt="Logo" className="logo" />
+      <img
+        src={`${process.env.PUBLIC_URL}/logo.svg`}
+        alt="Logo"
+        className="logo"
+      />
       <div className="description">
         안녕하세요
         <br /> 당신을 위한 디자이너 제품 커머스 NUTS <br />

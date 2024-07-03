@@ -1,9 +1,10 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register: React.FC = () => {
+  const navigate = useNavigate();
   const [type, setType] = useState<string>("");
   const [contact, setContact] = useState<string>("");
   const [suggestions, setSuggestions] = useState<string>("");
@@ -58,11 +59,10 @@ const Register: React.FC = () => {
           ? `&entry.${type_entry}=${type}`
           : `&entry.${type_entry}=0`
       }`;
-      console.log(fullUrl);
-      const response = await axios.get(fullUrl);
-      console.log(response.data);
+      await axios.get(fullUrl);
+      navigate(`/${type}`);
     } catch (error) {
-      console.error("Error submitting the form", error);
+      navigate(`/${type}`);
     }
   };
 
