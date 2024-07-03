@@ -89,7 +89,7 @@ const Register: React.FC = () => {
       <div>
         <div>Contact</div>
         <textarea
-          placeholder="이메일 혹은 전화번호"
+          placeholder="NUTS 출시 소식을 받고싶다면? (이메일 혹은 전화번호)"
           value={contact}
           onChange={handleContactChange}
           style={{ height: "16px", resize: "none" }}
