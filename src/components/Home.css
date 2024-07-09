@@ -1,32 +1,85 @@
 .home-container {
+  max-width: 800px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+
+  padding-top: 39px;
+  padding-bottom: 100px;
   background-color: white;
 }
 
-.logo {
-  width: 150px;
-  margin-bottom: 20px;
+.logo-mg-container {
+  width: 100%;
+
+  padding: 16px;
+}
+
+.logo-img {
+  width: 64px;
+  float: left;
+  margin: 16px;
+}
+
+.text-container {
+  text-align: center;
+
+  margin-top: 44px;
+}
+
+.title {
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
 }
 
 .description {
-  margin-bottom: 20px;
+  font-family: "Apple SD Gothic Neo";
+  font-size: 16px;
+  padding: 0;
+  margin: 16px;
+  font-weight: 600;
 }
 
 button {
+  width: 177px;
+  height: 56px;
+
+  margin: 16px;
+
+  border: none;
+  border-radius: 28px;
+
+  font-size: 24px;
+  font-weight: bold;
+
   background-color: black;
   color: white;
-  font-size: 1.2em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+
   cursor: pointer;
-  font-family: "Roboto", sans-serif;
 }
 
 button:hover {
   background-color: #333;
+}
+.landing-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.landing-img {
+  max-width: 500px;
+  width: calc(100% - 32px);
+  margin: 24px 0;
+}
+
+.landing-img-full {
+  max-width: 532px;
+  width: 100%;
+  margin: 24px 0;
 }

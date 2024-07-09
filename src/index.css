@@ -1,18 +1,16 @@
-@font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import "//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css";
 
 body {
-  margin: 0;
-  font-family: "GmarketSansMedium", sans-serif;
+  font-family: "Apple SD Gothic Neo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "GmarketSansMedium", sans-serif;
+  font-family: "Apple SD Gothic Neo", sans-serif;
+}
+
+:root {
+  --vh: 100%;
+  --vw: 100%;
 }

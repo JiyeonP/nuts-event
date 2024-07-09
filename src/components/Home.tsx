@@ -1,47 +1,106 @@
 import type React from "react";
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Home.css";
+import LandingType from "../utils/enums";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
   const { type } = useParams<{ type?: string }>();
 
-  useEffect(() => {
-    const resetZoom = () => {
-      document.body.style.transform = "scale(1)";
-      document.body.style.transformOrigin = "0 0";
-    };
-
-    resetZoom();
-  }, []);
-
   const handleRegisterClick = () => {
-    navigate(`/register${type ? `?type=${type}` : ""}`);
+    switch (type ?? "") {
+      case LandingType.FAN:
+        window.location.href = process.env.REACT_APP_LANDING_FAN as string;
+        break;
+      case LandingType.FIND:
+        window.location.href = process.env.REACT_APP_LANDING_FIND as string;
+        break;
+      case LandingType.FUNDING:
+        window.location.href = process.env.REACT_APP_LANDING_FUNDING as string;
+        break;
+      case LandingType.T:
+        window.location.href = process.env.REACT_APP_LANDING_T as string;
+        break;
+      default:
+        window.location.href = process.env.REACT_APP_LANDING_DEFAULT as string;
+    }
+  };
+
+  const getHeaderList = () => {
+    switch (type) {
+      case LandingType.FAN:
+        return ["뜰 것 같은 초기디자이너를", "직접 발굴하세요!"];
+      case LandingType.FIND:
+        return ["당신이 원하던 '느낌'", "저희가 찾아드립니다."];
+      case LandingType.FUNDING:
+        return ["디자인 제품에만", "집중한 펀딩"];
+      case LandingType.T:
+        return ["온라인에 흩어져 있는", "반팔티 전부 모았어요."];
+      default:
+        return ["당신을 위한", "디자이너 커머스 NUTS"];
+    }
+  };
+
+  const getDescription = () => {
+    switch (type) {
+      case LandingType.FAN:
+        return "나만의 개성을 표현할 유니크한 제품 겟하기.";
+      case LandingType.FIND:
+        return "여기에 모든 디자이너 브랜드를 모아뒀습니다.";
+      case LandingType.FUNDING:
+        return "어디서도 보지 못한 희귀 제품을 찾아서";
+      case LandingType.T:
+        return "소량제작되는 희귀템들도 NUTS에서";
+      default:
+        return "궁금하다면";
+    }
   };
 
   return (
     <div className="home-container">
-      <img
-        src={`${process.env.PUBLIC_URL}/logo.svg`}
-        alt="Logo"
-        className="logo"
-      />
-      <div className="description">
-        안녕하세요
-        <br />
-        <br /> 당신을 위한 디자이너 제품 커머스 NUTS <br />
-        궁금하다면
+      <div className="logo-img-container">
+        <img
+          src={`${process.env.PUBLIC_URL}/logo.svg`}
+          className="logo-img"
+          alt="NUTS logo"
+          loading="lazy"
+        />
       </div>
-      <button
-        type="button"
-        className="bt_register"
-        onClick={handleRegisterClick}
-      >
-        등록하기
-      </button>
+      <div className="text-container">
+        <h1 className="title">
+          {getHeaderList().map((header, index) => (
+            <div>
+              {header} <br />
+            </div>
+          ))}
+        </h1>
+        <h2 className="description">{getDescription()}</h2>
+        <button type="button" onClick={handleRegisterClick}>
+          사전예약하기
+        </button>
+      </div>
+      <div className="landing-img-container">
+        {(Object.values(LandingType) as string[]).includes(type ?? "")
+          ? [...Array(4)].map((_, index) => (
+              <img
+                src={`${process.env.PUBLIC_URL}/${type}_block${index + 1}.png`}
+                className={`landing-img${index === 1 ? "-full" : ""}`}
+                alt={`landing explanation ${index} for ${type}`}
+                loading="lazy"
+              />
+            ))
+          : null}
+      </div>
+      <div className="text-container">
+        <h2 className="description">취향 디자인을 찾아서, NUTS</h2>
+        <button
+          type="button"
+          onClick={handleRegisterClick}
+          style={{ margin: 0 }}
+        >
+          사전예약하기
+        </button>
+      </div>
     </div>
   );
 };
-
 export default Home;
