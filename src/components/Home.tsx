@@ -90,16 +90,18 @@ const Home: React.FC = () => {
             ))
           : null}
       </div>
-      <div className="text-container">
-        <h2 className="description">취향 디자인을 찾아서, NUTS</h2>
-        <button
-          type="button"
-          onClick={handleRegisterClick}
-          style={{ margin: 0 }}
-        >
-          사전예약하기
-        </button>
-      </div>
+      {(Object.values(LandingType) as string[]).includes(type ?? "") ? (
+        <div className="text-container">
+          <h2 className="description">취향 디자인을 찾아서, NUTS</h2>
+          <button
+            type="button"
+            onClick={handleRegisterClick}
+            style={{ margin: 0 }}
+          >
+            사전예약하기
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };
