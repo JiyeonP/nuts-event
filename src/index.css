@@ -1,11 +1,14 @@
 @import "//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css";
 
+html {
+  color: white;
+}
+
 body {
   font-family: "Apple SD Gothic Neo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  background-color: white;
 }
 
 code {
