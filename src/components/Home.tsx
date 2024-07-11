@@ -2,6 +2,7 @@ import type React from "react";
 import { useParams } from "react-router-dom";
 import "./Home.css";
 import LandingType from "../utils/enums";
+import ImageHolder from "./ImageHolder";
 
 const Home: React.FC = () => {
   const { type } = useParams<{ type?: string }>();
@@ -78,15 +79,17 @@ const Home: React.FC = () => {
           사전예약하기
         </button>
       </div>
-      <div className="landing-img-container">
+      <div className="landing-img-list-container">
         {(Object.values(LandingType) as string[]).includes(type ?? "")
           ? [...Array(4)].map((_, index) => (
-              <img
-                src={`${process.env.PUBLIC_URL}/${type}_block${index + 1}.svg`}
-                className={`landing-img${index === 1 ? "-full" : ""}`}
-                alt={`landing explanation ${index} for ${type}`}
-                loading="lazy"
-              />
+              <div className={`landing-img${index === 1 ? "-full" : ""}`}>
+                <ImageHolder
+                  src={`${process.env.PUBLIC_URL}/${type}_block${
+                    index + 1
+                  }.svg`}
+                  alt={`landing explanation ${index} for ${type}`}
+                />
+              </div>
             ))
           : null}
       </div>

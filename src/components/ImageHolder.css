@@ -1,0 +1,25 @@
+.image-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.spinner {
+  margin: calc(50% - 25px) auto;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+
+  border-top-color: rgb(204, 204, 204);
+  border-bottom-color: rgb(204, 204, 204);
+
+  border-radius: 100%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(180deg);
+  }
+}

@@ -10,7 +10,6 @@
 
 .logo-mg-container {
   width: 100%;
-
   padding: 16px;
 }
 
@@ -62,7 +61,7 @@ button {
 button:hover {
   background-color: #333;
 }
-.landing-img-container {
+.landing-img-list-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
