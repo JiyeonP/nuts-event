@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         {(Object.values(LandingType) as string[]).includes(type ?? "")
           ? [...Array(4)].map((_, index) => (
               <img
-                src={`${process.env.PUBLIC_URL}/${type}_block${index + 1}.png`}
+                src={`${process.env.PUBLIC_URL}/${type}_block${index + 1}.svg`}
                 className={`landing-img${index === 1 ? "-full" : ""}`}
                 alt={`landing explanation ${index} for ${type}`}
                 loading="lazy"
