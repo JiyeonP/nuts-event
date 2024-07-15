@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import "./App.css";
 
@@ -14,12 +14,10 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:type" element={<Home />} />
-        </Routes>
-      </HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:type" element={<Home />} />
+      </Routes>
     </div>
   );
 }
