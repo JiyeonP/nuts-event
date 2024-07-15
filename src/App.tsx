@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   function setScreenSize() {
@@ -14,10 +15,12 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:type" element={<Home />} />
-      </Routes>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:type" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
