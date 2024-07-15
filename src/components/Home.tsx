@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                 <ImageHolder
                   src={`${process.env.PUBLIC_URL}/${type}_block${
                     index + 1
-                  }.svg`}
+                  }.png`}
                   alt={`landing explanation ${index} for ${type}`}
                 />
               </div>
